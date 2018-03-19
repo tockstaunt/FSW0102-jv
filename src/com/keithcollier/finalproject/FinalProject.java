@@ -35,41 +35,63 @@ public static void main(String[] args) throws Exception{
 		switch (menu) {
 		
 		case 1:
+			
 			System.out.println("What Task would you like to add?");
 			String input = reader.readLine();
 			taskItems.add(input);
 			System.out.print("You have added a task!");
+			
+			
 			break;
 			
 		case 2:
+			int numbers2 = 1;
+	    	  
+	    	  
+	    	  for (int i = 0; i < taskItems.size();i++) {
+	    		  
+	    		  String listItems = numbers2 +": " + taskItems.get(i);
+	    		  numbers2++;
+	    			System.out.println(listItems);
+	    			
+	    		}
 			System.out.println("What Task would you like to delete?");
 			int input2 = in.nextInt();
-			taskItems.remove(input2);
-			System.out.print("You have dleted a task!");
+			if(taskItems.size() > 0){taskItems.remove(input2);
+				System.out.print("You have deleted a task!");
+				}
+			else 
+			{
+				System.out.println("Sorry Try Again");
+				}
+			
 
             break;
 
 		case 3:
 
             
-          System.out.println("Mark Task As Complete?");
-      	  
-      	  
-      	for (int i = 0; i < taskItems.size();i++) {
-			System.out.println(taskItems.get(i));
-			
-		}
-      		int input4 = in.nextInt();
-           	  taskItems.add(taskItems +" (COMPLETE)");
-
+			int numbers3 = 1;
+	    	  
+	    	  
+	    	  for (int i = 0; i < taskItems.size();i++) {
+	    		  
+	    		  String listItems = numbers3 +": " + taskItems.get(i);
+	    		  numbers3++;
+	    			System.out.println(listItems);
+	    			
+	    		}
             break;
 
       case 4:
-
+    	  
+    	  int numbers4 = 1;
+    	  
+    	  
     	  for (int i = 0; i < taskItems.size();i++) {
-    		  int number = 1;
-    		  String listItems = number +": " + taskItems.get(i);
     		  
+    		  String listItems = numbers4 +": " + taskItems.get(i);
+    		  numbers4++;
     			System.out.println(listItems);
     			
     		}
