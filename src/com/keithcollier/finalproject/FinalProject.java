@@ -6,7 +6,9 @@ import java.util.*;
 
 public class FinalProject {
 public static void main(String[] args) throws Exception{
-	@SuppressWarnings("resource")
+	
+	
+	
 	Scanner in = new Scanner(System.in);
 	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	//menu List
@@ -19,7 +21,7 @@ public static void main(String[] args) throws Exception{
 	menuItems.add("4: List the tasks");
 	
 	//TaskList
-	List<String> taskItems = new ArrayList<String>();
+	List<String> taskItems = new ArrayList<String>(25);
 	
 	//for loop to display list
 	for (int i = 0; i < menuItems.size();i++) {
@@ -34,6 +36,7 @@ public static void main(String[] args) throws Exception{
 	do {	
 		
 		System.out.println("What would you like to do: ");
+		
 		menu = in.nextInt();
 	
 		switch (menu) {	
@@ -60,30 +63,28 @@ public static void main(String[] args) throws Exception{
 			//section for the logic around deleting tasks
 			int input2 = in.nextInt();
 			
-			if(taskItems.equals(true)){
-				taskItems.remove(input2 + 1);
-				System.out.print("You have deleted a task!");
+			if(taskItems.get(input2).isEmpty()){
+				System.out.println("try again");
 			}
 			else {
-				System.out.println("try again");
+				
+				taskItems.remove(input2);
+				System.out.print("You have deleted a task!");
 			}
 			
 			
             break;
 
 		case 3:
-
-            
 			int numbers3 = 1;
-	    	  
-	    	  
-	    	  for (int i = 0; i < taskItems.size();i++) {
+	    	  	  
+	    	for (int i = 0; i < taskItems.size();i++) {
 	    		  
-	    		  String listItems = numbers3 +": " + taskItems.get(i);
-	    		  numbers3++;
-	    			System.out.println(listItems);
+	    	  String listItems = numbers3 +": " + taskItems.get(i);
+	    	  numbers3++;
+	    	  System.out.println(listItems);
 	    			
-	    		}
+	    	}
             break;
 
       case 4:
