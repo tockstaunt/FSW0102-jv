@@ -12,9 +12,7 @@ public static void main(String[] args) throws Exception{
 	Scanner in = new Scanner(System.in);
 	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	//menu List
-	List<String> menuItems = new ArrayList<String>();
-	
-	
+	List<String> menuItems = new ArrayList<String>();	
 	menuItems.add("1: Add a task");
 	menuItems.add("2: Remove a task");
 	menuItems.add("3: Mark a task complete");
@@ -24,15 +22,11 @@ public static void main(String[] args) throws Exception{
 	List<String> taskItems = new ArrayList<String>(25);
 	boolean quit = false;
 	
-	
 	//switches
-	do {	
-		
-		
+	do {			
 		//for loop to display list
 		for (int i = 0; i < menuItems.size();i++) {
-			System.out.println(menuItems.get(i));
-			
+			System.out.println(menuItems.get(i));			
 		}
 		
 		System.out.println("What would you like to do: ");
@@ -51,16 +45,15 @@ public static void main(String[] args) throws Exception{
 			
 		//case 2 when two is selected allows for deleting tasks	
 		case 2:
+			
 			int numbers2 = 1;
-	    	for (int i = 0; i < taskItems.size();i++) {
-	    	  
+	    	for (int i = 0; i < taskItems.size();i++) {	    	  
 	    	String listItems = numbers2 +": " + taskItems.get(i);
 	    	numbers2++;
-	    	
 	    	System.out.println(listItems);
-	    			
-	    		}
+	    	}
 			System.out.println("What Task would you like to delete?");
+			
 			//the logic around deleting tasks
 			int input2 = in.nextInt();
 			input2--;
