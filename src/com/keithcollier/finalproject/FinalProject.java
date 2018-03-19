@@ -6,6 +6,7 @@ import java.util.*;
 
 public class FinalProject {
 public static void main(String[] args) throws Exception{
+	@SuppressWarnings("resource")
 	Scanner in = new Scanner(System.in);
 	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	//menu List
@@ -28,44 +29,46 @@ public static void main(String[] args) throws Exception{
 	
 	boolean quit = false;
 	int menu;
+	
+	//switches
 	do {	
+		
 		System.out.println("What would you like to do: ");
 		menu = in.nextInt();
 	
-		switch (menu) {
+		switch (menu) {	
 		
-		case 1:
-			
+		//when one is selected allows for adding tasks
+		case 1:			
 			System.out.println("What Task would you like to add?");
 			String input = reader.readLine();
 			taskItems.add(input);
-			System.out.print("You have added a task!");
-			
-			
+			System.out.print("You have added a task!");			
 			break;
-			
+		//case 2 when two is selected allows for deleting tasks	
 		case 2:
 			int numbers2 = 1;
+	    	for (int i = 0; i < taskItems.size();i++) {
 	    	  
-	    	  
-	    	  for (int i = 0; i < taskItems.size();i++) {
-	    		  
-	    		  String listItems = numbers2 +": " + taskItems.get(i);
-	    		  numbers2++;
-	    			System.out.println(listItems);
+	    	String listItems = numbers2 +": " + taskItems.get(i);
+	    	numbers2++;
+	    	
+	    	System.out.println(listItems);
 	    			
 	    		}
 			System.out.println("What Task would you like to delete?");
+			//section for the logic around deleting tasks
 			int input2 = in.nextInt();
-			if(taskItems.size() > 0){taskItems.remove(input2);
-				System.out.print("You have deleted a task!");
-				}
-			else 
-			{
-				System.out.println("Sorry Try Again");
-				}
 			
-
+			if(taskItems.equals(true)){
+				taskItems.remove(input2 + 1);
+				System.out.print("You have deleted a task!");
+			}
+			else {
+				System.out.println("try again");
+			}
+			
+			
             break;
 
 		case 3:
