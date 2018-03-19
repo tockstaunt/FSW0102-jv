@@ -63,14 +63,16 @@ public static void main(String[] args) throws Exception{
 			System.out.println("What Task would you like to delete?");
 			//the logic around deleting tasks
 			int input2 = in.nextInt();
+			input2--;
 			
-			if(taskItems.get(input2).isEmpty()){
+			if(taskItems.get(input2).equals(null)){
 				System.out.println("try again");
 			}
 			else {
 				
 				taskItems.remove(input2) ;
 				System.out.print("You have deleted a task!");
+				System.out.print(" ");
 			}
 			
 			
@@ -89,7 +91,7 @@ public static void main(String[] args) throws Exception{
 	    	
 	    	//logic of adding complete
 	    	int input3 = in.nextInt();
-	    	
+	    		input3--;
 	    	 String taskComp = taskItems.get(input3) + " (COMPLETE)";
 	    	 taskItems.set(input3, taskComp );
 	    	
@@ -105,12 +107,10 @@ public static void main(String[] args) throws Exception{
     		  String listItems = numbers4 +": " + taskItems.get(i);
     		  numbers4++;
     			System.out.println(listItems);
-    			
-    		}
+    			}
     	 System.out.println("End of List");
             break;
-		
-	case 0:
+			case 0:
 
         quit = true;
 
