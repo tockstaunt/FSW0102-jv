@@ -72,7 +72,7 @@ public static void main(String[] args) throws Exception{
 				
 				taskItems.remove(input2) ;
 				System.out.print("You have deleted a task!");
-				System.out.print(" ");
+				
 			}
 			
 			
